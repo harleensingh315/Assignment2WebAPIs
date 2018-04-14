@@ -15,7 +15,7 @@ namespace Assignment2_Part2.Models
 
         }
         [Key]
-        public int Theater_id { get; set; }
+        public string Theater_id { get; set; }
         [Required]
         public string TheaterName { get; set; }
         public string Address { get; set; }

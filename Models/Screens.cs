@@ -15,9 +15,9 @@ namespace Assignment2_Part2.Models
 
         }
         [Required]
-        public int Theater_id { get; set; }
+        public string Theater_id { get; set; }
         [Key]
-        public  int Screen_id { get; set; }
+        public  string Screen_id { get; set; }
         [Required]
         public int No_of_Seats { get; set; }
         public string Current_Movie { get; set; }

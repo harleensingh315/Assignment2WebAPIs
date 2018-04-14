@@ -29,7 +29,7 @@ namespace Assignment2_Part2.Controllers
 
         // GET: api/Theaters/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetTheaters([FromRoute] int id)
+        public async Task<IActionResult> GetTheaters([FromRoute] string id)
         {
             if (!ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace Assignment2_Part2.Controllers
 
         // PUT: api/Theaters/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutTheaters([FromRoute] int id, [FromBody] Theaters theaters)
+        public async Task<IActionResult> PutTheaters([FromRoute] string id, [FromBody] Theaters theaters)
         {
             if (!ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace Assignment2_Part2.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!TheatersExists(id))
+                if (!TheatersExists((id)))
                 {
                     return NotFound();
                 }
@@ -98,7 +98,7 @@ namespace Assignment2_Part2.Controllers
 
         // DELETE: api/Theaters/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTheaters([FromRoute] int id)
+        public async Task<IActionResult> DeleteTheaters([FromRoute] string id)
         {
             if (!ModelState.IsValid)
             {
@@ -117,7 +117,7 @@ namespace Assignment2_Part2.Controllers
             return Ok(theaters);
         }
 
-        private bool TheatersExists(int id)
+        private bool TheatersExists(string id)
         {
             return _context.Theater.Any(e => e.Theater_id == id);
         }

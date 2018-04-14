@@ -29,7 +29,7 @@ namespace Assignment2_Part2.Controllers
 
         // GET: api/Screens/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetScreens([FromRoute] int id)
+        public async Task<IActionResult> GetScreens([FromRoute] string id)
         {
             if (!ModelState.IsValid)
             {
@@ -48,7 +48,7 @@ namespace Assignment2_Part2.Controllers
 
         // PUT: api/Screens/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutScreens([FromRoute] int id, [FromBody] Screens screens)
+        public async Task<IActionResult> PutScreens([FromRoute] string id, [FromBody] Screens screens)
         {
             if (!ModelState.IsValid)
             {
@@ -98,7 +98,7 @@ namespace Assignment2_Part2.Controllers
 
         // DELETE: api/Screens/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteScreens([FromRoute] int id)
+        public async Task<IActionResult> DeleteScreens([FromRoute] string id)
         {
             if (!ModelState.IsValid)
             {
@@ -117,7 +117,7 @@ namespace Assignment2_Part2.Controllers
             return Ok(screens);
         }
 
-        private bool ScreensExists(int id)
+        private bool ScreensExists(string id)
         {
             return _context.Screen.Any(e => e.Screen_id == id);
         }
