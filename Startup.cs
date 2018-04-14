@@ -37,6 +37,7 @@ namespace Assignment2_Part2
             {
                 app.UseDeveloperExceptionPage();
             }
+
             app.UseMvc();
         }
     }
