@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace Assignment2_Part2.Models
 {
+    [Table("Screens")]
     public class Screens
     {
+        public Screens()
+        {
+
+        }
         [Required]
         public int Theater_id { get; set; }
         [Key]
